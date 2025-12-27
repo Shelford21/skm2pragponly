@@ -66,7 +66,7 @@ st.markdown(
         <div class="transparent-container">
             <h1>✨ PraGP SKM 2</h1>
             <h4>
-            يٰٓاَيُّهَا الَّذِيْنَ اٰمَنُوْٓا اِنْ تَنْصُرُوا اللّٰهَ يَنْصُرْكُمْ وَيُثَبِّتْ اَقْدَامَكُمْ <br><br> 💡"Wahai orang-orang yang beriman, jika kamu menolong (agama) Allah, niscaya Dia akan menolongmu dan meneguhkan kedudukanmu" QS 47 ayat 7 <br><br>INFO:<br>Absensi ini khusus untuk SKM 2 saja ya .. <br>(skm 1 dan 3 tidak perlu absen disini ok)
+            يٰٓاَيُّهَا الَّذِيْنَ اٰمَنُوْٓا اِنْ تَنْصُرُوا اللّٰهَ يَنْصُرْكُمْ وَيُثَبِّتْ اَقْدَامَكُمْ <br><br> 💡"Wahai orang-orang yang beriman, jika kamu menolong (agama) Allah, niscaya Dia akan menolongmu dan meneguhkan kedudukanmu" QS 47 ayat 7 <br><br>INFO:<br>Absensi ini khusus untuk SKM 2 saja ya ..<br>(skm 1 dan 3 tidak perlu absen disini ok)
     </h4>
     
         """,
@@ -251,6 +251,7 @@ if admin_password == ADMIN_PASSWORD:
 else:
     if admin_password != "":
         st.error("❌ Incorrect password.")
+
 
 
 
