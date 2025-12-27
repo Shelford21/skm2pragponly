@@ -25,20 +25,14 @@ if "submitted" not in st.session_state:
 
 
 conn = st.connection("gsheets", type=GSheetsConnection)
-
 data = conn.read(worksheet=url)
-
 name= load_sheet()
 
 
 
 
 dff = pd.DataFrame(name)
-
-
-
 CSV_FILE = "submissions.csv"
-
 ADMIN_PASSWORD = "pragp99"
 
 st.set_page_config(page_title="PraGP Sukamulya 2",
@@ -60,10 +54,7 @@ now = datetime.now() - timedelta(hours=-7)
 
 
 formatted_now = now.strftime("%A, %d %B %Y - %H:%M:%S")
-
 st.markdown(f"### 🗺️ {formatted_now}")
-
-
 selected_date = now.day
 
 
@@ -114,8 +105,6 @@ if st.button("Submit Kehadiran"):
             row_idx = name_row[0]
             col_idx = 3 + (selected_date - 1)  
             # kolom tanggal cek sheet nya pls
-
-            
             name.iat[row_idx, col_idx] = status_map[selected_status]
             conn.update(worksheet=url, data=name)
      
@@ -138,6 +127,8 @@ if st.button("Submit Kehadiran"):
                 st.success(f"✅ جَزَاكُمُ اللهُ خَيْرًا {selected_name} - Semoga Allah paring kelonggaran waktu untuk hadir di pertemuan selanjutnya.")
             elif selected_status == "Sakit":
                 st.success(f"✅ جَزَاكُمُ اللهُ خَيْرًا {selected_name} - Semoga Allah paring kesembuhan dan kesehatan yang barokah.")
+
+
 if st.session_state.submitted:
     st.session_state.submitted = False
             
@@ -160,11 +151,7 @@ if os.path.exists(CSV_FILE):
 
 
 st.markdown("---")
-
-
 st.subheader("Khusus Admin")
-
-
 admin_password = st.text_input("Masukan password untuk menggunakan fitur:", type="password")
 
 
@@ -199,6 +186,7 @@ if admin_password == ADMIN_PASSWORD:
 else:
     if admin_password != "":
         st.error("❌ Incorrect password.")
+
 
 
 
